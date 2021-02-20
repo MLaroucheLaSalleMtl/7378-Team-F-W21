@@ -12,7 +12,7 @@ public class Dialog : MonoBehaviour
 
     //public GameObject continueButton;
 
-    public void Start()
+    void Start()
     {
         StartCoroutine(Type());
     }
