@@ -18,25 +18,32 @@ public class CharacterMove : MonoBehaviour
 
     public Animator anim;
 
+    public float activeSpeed= 100f;
+    public float rollCounter = 1f;
+    
     public void OnMove(InputAction.CallbackContext context)
     {
-        move = context.ReadValue<Vector2>(); // read controller input
-
+       move = context.ReadValue<Vector2>(); // read controller input
+        
+       
     }
 
     // Start is called before the first frame update
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
+        
     }
 
     private void Movement()
     {
+        
+        
         Vector3 pos = new Vector3();
         pos.x = move.x * speedX;
         pos.y = move.y * speedY;
         rigid.velocity = Vector3.SmoothDamp(rigid.velocity, pos, ref zeroVelocity, smoothing);
-
+        
     }
 
     // Update is called once per frame
@@ -52,6 +59,7 @@ public class CharacterMove : MonoBehaviour
         {
             anim.SetBool("isMoving", false);
         }
+        
     }
 
     void rotateAiming()
@@ -78,5 +86,27 @@ public class CharacterMove : MonoBehaviour
     void FixedUpdate()
     {
         Movement();
+        Roll();
+    }
+
+    void Roll()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            anim.SetTrigger("roll");
+
+            Vector3 pos = new Vector3();
+            pos.x = move.x * activeSpeed;
+            pos.y = move.y * activeSpeed;
+            rigid.velocity = Vector3.SmoothDamp(rigid.velocity, pos, ref zeroVelocity, .1f);
+            //rollCounter -= Time.deltaTime;
+        }            
+            //if(rollCounter<=0)
+            //{
+            //    Movement();
+            //    rollCounter = 1f;
+            //}
+       
+        
     }
 }

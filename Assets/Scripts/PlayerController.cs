@@ -7,19 +7,30 @@ public class PlayerController : MonoBehaviour
     public GameObject bullets;
     public Transform shootingPoint;
     [SerializeField] private AudioSource audioShoot;
+    public bool Paused;
 
-    
+
 
     // Start is called before the first frame update
     void Start()
     {
-  
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        Shooting();
+
+        if (Paused ==false)
+        {
+            Shooting();
+        }
+            
+            
+        
+            
+        
+        //Shooting();
     }
 
 

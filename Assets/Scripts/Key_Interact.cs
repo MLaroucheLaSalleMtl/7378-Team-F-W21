@@ -2,8 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LoadSence : MonoBehaviour
+public class Key_Interact : MonoBehaviour
 {
+
+    [SerializeField] private KeyType keyType;
+
+    public enum KeyType
+    {
+        Red,
+        Green,
+        Blue
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {

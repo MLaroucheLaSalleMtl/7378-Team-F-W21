@@ -1,73 +1,31 @@
 fileFormatVersion: 2
-guid: 177d7a9dd9b6d42df90663d635049e7d
+guid: 785f29757a551864799a1ba186696600
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5683728661986352154
-    second: prisoner_character_0
+      213: 5213229242370633579
+    second: Door_0
   - first:
-      213: -64393171017981677
-    second: prisoner_character_1
+      213: 436563815456543028
+    second: Door_1
   - first:
-      213: 4151433811363821177
-    second: prisoner_character_2
+      213: -8689009931745917929
+    second: Door_2
   - first:
-      213: 4874111581892869500
-    second: prisoner_character_3
+      213: 289144848352645085
+    second: Door_3
   - first:
-      213: 3335878306485584148
-    second: prisoner_character_4
+      213: 6936692723106717497
+    second: Door_4
   - first:
-      213: -3939448849433313950
-    second: prisoner_character_5
+      213: 8808929173557640368
+    second: Door_5
   - first:
-      213: -4283819471927042054
-    second: prisoner_character_6
+      213: -118703559905284274
+    second: Door_6
   - first:
-      213: -5608606539951608377
-    second: prisoner_character_7
-  - first:
-      213: 1363656961265085153
-    second: prisoner_character_8
-  - first:
-      213: 2286101143379503249
-    second: prisoner_character_9
-  - first:
-      213: 3063223658168295925
-    second: prisoner_character_10
-  - first:
-      213: 8899392418608735745
-    second: prisoner_character_0
-  - first:
-      213: -4178717464144001897
-    second: prisoner_character_1
-  - first:
-      213: 4454243066425325210
-    second: prisoner_character_2
-  - first:
-      213: -8744133126026123563
-    second: prisoner_character_3
-  - first:
-      213: -5486470694642127494
-    second: prisoner_character_4
-  - first:
-      213: -1836993622409100037
-    second: prisoner_character_5
-  - first:
-      213: 1638925988043805644
-    second: prisoner_character_6
-  - first:
-      213: -2141717288476721788
-    second: prisoner_character_7
-  - first:
-      213: 794917821237944550
-    second: prisoner_character_8
-  - first:
-      213: 9066738322562286135
-    second: prisoner_character_9
-  - first:
-      213: 4128361569078480196
-    second: prisoner_character_10
+      213: 1360838911650288969
+    second: Door_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -98,7 +56,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -112,7 +70,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -131,10 +89,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 512
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -143,10 +101,10 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 512
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -154,11 +112,11 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 512
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -167,10 +125,10 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 512
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -179,10 +137,10 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
-    maxTextureSize: 512
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -193,232 +151,169 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: prisoner_character_0
+      name: Door_0
       rect:
         serializedVersion: 2
-        x: 10
-        y: 6
-        width: 12
-        height: 18
+        x: 0
+        y: 0
+        width: 33
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1066af3f04ef08b70800000000000000
-      internalID: 8899392418608735745
+      spriteID: b6f2e24006c195840800000000000000
+      internalID: 5213229242370633579
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prisoner_character_1
+      name: Door_1
       rect:
         serializedVersion: 2
-        x: 41
-        y: 6
-        width: 13
-        height: 19
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
+        x: 33
+        y: 0
+        width: 33
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 794c9fc2b963206c0800000000000000
-      internalID: -4178717464144001897
+      spriteID: 43193162a7cfe0600800000000000000
+      internalID: 436563815456543028
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prisoner_character_2
+      name: Door_2
       rect:
         serializedVersion: 2
-        x: 74
-        y: 6
-        width: 12
-        height: 18
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
+        x: 66
+        y: 0
+        width: 33
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9637852876a0dd30800000000000000
-      internalID: 4454243066425325210
+      spriteID: 7148170e08f6a6780800000000000000
+      internalID: -8689009931745917929
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prisoner_character_3
+      name: Door_3
       rect:
         serializedVersion: 2
-        x: 106
-        y: 7
-        width: 12
-        height: 16
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
+        x: 99
+        y: 0
+        width: 33
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d6ac72104996a680800000000000000
-      internalID: -8744133126026123563
+      spriteID: ddf81b625bf330400800000000000000
+      internalID: 289144848352645085
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prisoner_character_4
+      name: Door_4
       rect:
         serializedVersion: 2
-        x: 138
-        y: 6
-        width: 12
-        height: 18
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
+        x: 132
+        y: 0
+        width: 33
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a7de347c8f32cd3b0800000000000000
-      internalID: -5486470694642127494
+      spriteID: 93f10dc8745144060800000000000000
+      internalID: 6936692723106717497
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prisoner_character_5
+      name: Door_5
       rect:
         serializedVersion: 2
-        x: 169
-        y: 6
-        width: 14
-        height: 19
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
+        x: 165
+        y: 0
+        width: 33
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf4c5a18800b186e0800000000000000
-      internalID: -1836993622409100037
+      spriteID: 0bc7a71696a9f3a70800000000000000
+      internalID: 8808929173557640368
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prisoner_character_6
+      name: Door_6
       rect:
         serializedVersion: 2
-        x: 202
-        y: 6
-        width: 12
-        height: 18
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
+        x: 198
+        y: 0
+        width: 33
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc3d182b082aeb610800000000000000
-      internalID: 1638925988043805644
+      spriteID: e4f654ebdb74a5ef0800000000000000
+      internalID: -118703559905284274
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prisoner_character_7
+      name: Door_7
       rect:
         serializedVersion: 2
-        x: 234
-        y: 6
-        width: 12
-        height: 15
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
+        x: 231
+        y: 0
+        width: 33
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 48d380339771742e0800000000000000
-      internalID: -2141717288476721788
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: prisoner_character_8
-      rect:
-        serializedVersion: 2
-        x: 264
-        y: 6
-        width: 17
-        height: 6
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6e0e388fb8d180b00800000000000000
-      internalID: 794917821237944550
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: prisoner_character_9
-      rect:
-        serializedVersion: 2
-        x: 298
-        y: 6
-        width: 12
-        height: 18
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7320fbb777683dd70800000000000000
-      internalID: 9066738322562286135
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: prisoner_character_10
-      rect:
-        serializedVersion: 2
-        x: 330
-        y: 6
-        width: 12
-        height: 19
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 44d0c4d59f2ea4930800000000000000
-      internalID: 4128361569078480196
+      spriteID: 945d175b7cba2e210800000000000000
+      internalID: 1360838911650288969
       vertices: []
       indices: 
       edges: []
