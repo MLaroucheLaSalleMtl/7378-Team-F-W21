@@ -1,20 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Key_Interact : MonoBehaviour
+public class UIController : MonoBehaviour
 {
+    public static UIController instance;
+    public Slider playerHealthBar;
 
-    [SerializeField] private KeyType keyType;
-
-    public enum KeyType
+    public GameObject gameOverScreen;
+    public GameObject canvas;
+    private void Awake()
     {
-        Red,
-        Green,
-        Blue
+        instance = this;
     }
-
-
     // Start is called before the first frame update
     void Start()
     {

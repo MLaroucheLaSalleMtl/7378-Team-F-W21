@@ -30,16 +30,11 @@ public class Bullets : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Instantiate(bulletEffects, transform.position, transform.rotation);
-        //if (collision.gameObject.CompareTag("Enemy"))
-        //{
-            //Destroy(GameObject.FindWithTag("Enemy"));
-             //Health -= 10.0f;
+        
 
-            //Debug.Log(Health);
 
-        //}
         Destroy(gameObject);
-
+        
     }
 
     void OnBecameInvinsible ()

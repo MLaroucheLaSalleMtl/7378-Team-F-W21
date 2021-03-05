@@ -26,10 +26,7 @@ public class PlayerController : MonoBehaviour
             Shooting();
         }
             
-            
-        
-            
-        
+       
         //Shooting();
     }
 
@@ -41,6 +38,14 @@ public class PlayerController : MonoBehaviour
             Instantiate(bullets, shootingPoint.position, shootingPoint.rotation);
 
            if (audioShoot) audioShoot.PlayOneShot(audioShoot.clip);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "EnemyBullets")
+        {
+            PlayerHealth.instance.HurtPlayer();
         }
     }
 }

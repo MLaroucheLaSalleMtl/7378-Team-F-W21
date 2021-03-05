@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class CharacterMove : MonoBehaviour
 {
+    public static CharacterMove instance;
 
     private Vector2 move = new Vector2();
 
@@ -19,18 +20,22 @@ public class CharacterMove : MonoBehaviour
     public Animator anim;
 
     public float activeSpeed= 100f;
-    public float rollCounter = 1f;
     
     public void OnMove(InputAction.CallbackContext context)
     {
        move = context.ReadValue<Vector2>(); // read controller input
+
         
-       
+    }
+    private void Awake()
+    {
+        instance = this;
     }
 
     // Start is called before the first frame update
     void Start()
     {
+      
         rigid = GetComponent<Rigidbody2D>();
         
     }
@@ -98,15 +103,10 @@ public class CharacterMove : MonoBehaviour
             Vector3 pos = new Vector3();
             pos.x = move.x * activeSpeed;
             pos.y = move.y * activeSpeed;
-            rigid.velocity = Vector3.SmoothDamp(rigid.velocity, pos, ref zeroVelocity, .1f);
-            //rollCounter -= Time.deltaTime;
-        }            
-            //if(rollCounter<=0)
-            //{
-            //    Movement();
-            //    rollCounter = 1f;
-            //}
-       
-        
+            rigid.velocity = Vector3.SmoothDamp(rigid.velocity, pos, ref zeroVelocity, .1f);         
+        }                     
+          
     }
+
+
 }
