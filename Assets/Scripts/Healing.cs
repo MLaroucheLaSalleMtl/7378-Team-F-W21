@@ -21,6 +21,7 @@ public class Healing : MonoBehaviour
         if (collision.tag == "Player")
         {
             PlayerHealth.instance.Healing();
+            Destroy(gameObject);  //tom, to destroy the heal
         }
     }
 }

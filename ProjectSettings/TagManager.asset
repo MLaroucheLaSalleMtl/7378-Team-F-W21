@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Enemy
   - Heal
+  - PlayerBullets
+  - Enemy_1
+  - Key
   layers:
   - Default
   - TransparentFX

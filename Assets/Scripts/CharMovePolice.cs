@@ -23,6 +23,7 @@ public class CharMovePolice : MonoBehaviour
     public float shootRate;
 
     public float enemyShootRange;
+    public GameObject blood;
 
     public static CharMovePolice instance;
     private void Awake()
@@ -40,7 +41,7 @@ public class CharMovePolice : MonoBehaviour
     void Update()
     {
         healthbar.SetHealth(Health);
-        if (Vector2.Distance(transform.position, target.position) > awayfrom)
+        if (Vector2.Distance(transform.position, target.position) < awayfrom)
         {
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
             anim.SetBool("enemyMove",true);
@@ -51,7 +52,7 @@ public class CharMovePolice : MonoBehaviour
         }
         enemyRotateAiming();
 
-        if (range && Vector3.Distance(transform.position, CharacterMove.instance.transform.position) < enemyShootRange)
+        if (range && Vector3.Distance(transform.position, CharacterMove.instance.transform.position) < enemyShootRange) // to make the police stop moving
         {
             shootCounter -= Time.deltaTime;
             if (shootCounter <= 0)
@@ -63,34 +64,25 @@ public class CharMovePolice : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Health -= 10;
-        if (Health <= 0)
+        if(collision.tag=="PlayerBullets")
         {
-            //anim.SetBool("enemyDeath", true);
-            Point += 1;
-            txtPoint.text = preTextPoint + Point.ToString("D2");
-
-            Destroy(gameObject);
+            HurtEnemy();
         }
+        //if (Health <= 0)
+        //{
+        //    //anim.SetBool("enemyDeath", true);
+        //    Point += 1;
+        //    txtPoint.text = preTextPoint + Point.ToString("D2");
+
+        //    Destroy(gameObject);
+        //}
         if (collision.tag == "Player")
         {
             PlayerHealth.instance.HurtPlayer();
         }
-        //if(collision.tag=="PlayerBullets")
-        //{
-        //    Health -= 10;
-        //    if (Health <= 0)
-        //    {
-        //        //anim.SetBool("enemyDeath", true);
-        //        Point += 1;
-        //        txtPoint.text = preTextPoint + Point.ToString("D2");
-
-        //        Destroy(gameObject);
-        //    }
-        //}
+        
     }
-
-   
+ 
     public void checksur()
     {
 
@@ -109,20 +101,21 @@ public class CharMovePolice : MonoBehaviour
             transform.localScale =  Vector3.one;
         }
     }
-    //public void HurtEnemy()
-    //{
-    //    Health -= 10;
-    //    if (Health <= 0)
-    //    {
-    //        //anim.SetBool("enemyDeath", true);
-    //        Point += 1;
-    //        txtPoint.text = preTextPoint + Point.ToString("D2");
-            
-    //        Destroy(gameObject);
-    //    }
-    //    //else
-    //    //{
-    //    //    anim.SetBool("enemyDeath", false);
-    //    //}
-    //}
+    public void HurtEnemy()
+    {
+        Health -= 10;
+        if (Health <= 0)
+        {
+            //anim.SetBool("enemyDeath", true);
+            Point += 1;
+            txtPoint.text = preTextPoint + Point.ToString("D2");
+
+            Destroy(gameObject);
+            Instantiate(blood, transform.position, transform.rotation);
+        }
+        //else
+        //{
+        //    anim.SetBool("enemyDeath", false);
+        //}
+    }
 }

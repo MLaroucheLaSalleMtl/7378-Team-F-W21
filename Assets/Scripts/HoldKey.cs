@@ -31,10 +31,11 @@ public class HoldKey : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collider) // check collider
     {
         Key key = collider.GetComponent<Key>(); // the key
-        if (key!= null) // if t5he key is collided
+        if (collider.CompareTag("Key")) // if the key is collided, collider.CompareTag("Key"), key != null
         {
             Addkey(key.GetKeyType());
             Destroy(key.gameObject);
+            Debug.Log("collided");
         }
 
         KeyDoor keyDoor = collider.GetComponent<KeyDoor>();

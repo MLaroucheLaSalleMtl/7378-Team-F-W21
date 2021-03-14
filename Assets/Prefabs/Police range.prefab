@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1696513997581183190}
   - component: {fileID: 1696513997581183188}
   - component: {fileID: 1696513997581183195}
+  - component: {fileID: -1621008881851462418}
   m_Layer: 8
   m_Name: Police range
   m_TagString: Enemy
@@ -174,6 +175,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.4375, y: 0.65625}
   m_EdgeRadius: 0
+--- !u!114 &-1621008881851462418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696513997581183191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 622404503db29904ea57b8013c11ffdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1696513997890063349
 GameObject:
   m_ObjectHideFlags: 0
