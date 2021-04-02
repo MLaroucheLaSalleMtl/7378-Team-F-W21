@@ -7,14 +7,14 @@ public class CharMovePolice : MonoBehaviour
 {
     public float speed;
     public float awayfrom;
-    private Transform target;
+    public Transform target;
 
     [SerializeField] private int Health = 100;
     public HealthBar healthbar;
     public Animator anim;
-    [SerializeField] private int Point = 0;
-    [SerializeField] private Text txtPoint;
-    private const string preTextPoint = "Point: ";
+    //[SerializeField] private int Point = 0;
+    //[SerializeField] private Text txtPoint;
+    //private const string preTextPoint = "Point: ";
 
     public bool range;
     public GameObject enemyBullets;
@@ -25,7 +25,10 @@ public class CharMovePolice : MonoBehaviour
     public float enemyShootRange;
     public GameObject blood;
 
+    public bool dropCoins;
+    public int dropChance;
     public static CharMovePolice instance;
+    public GameObject coin;
     private void Awake()
     {
         instance = this;
@@ -34,12 +37,14 @@ public class CharMovePolice : MonoBehaviour
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        txtPoint.text = preTextPoint + Point.ToString("D2");
+        //txtPoint.text = preTextPoint + Point.ToString("D2");
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (CharacterMove.instance.gameObject.activeInHierarchy) 
+        { 
         healthbar.SetHealth(Health);
         if (Vector2.Distance(transform.position, target.position) < awayfrom)
         {
@@ -61,6 +66,7 @@ public class CharMovePolice : MonoBehaviour
                 Instantiate(enemyBullets, enemyShootPoint.transform.position, enemyShootPoint.transform.rotation);
             }
         }
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -78,7 +84,7 @@ public class CharMovePolice : MonoBehaviour
         //}
         if (collision.tag == "Player")
         {
-            PlayerHealth.instance.HurtPlayer();
+            PlayerHealth.instance.HurtPlayer(10);
         }
         
     }
@@ -107,11 +113,22 @@ public class CharMovePolice : MonoBehaviour
         if (Health <= 0)
         {
             //anim.SetBool("enemyDeath", true);
-            Point += 1;
-            txtPoint.text = preTextPoint + Point.ToString("D2");
-
+            //Point += 1;
+            //txtPoint.text = preTextPoint + Point.ToString("D2");
+            
             Destroy(gameObject);
             Instantiate(blood, transform.position, transform.rotation);
+            GameManager.instance.AddPoint();
+
+            if (dropCoins)
+            {
+                float dropChanceRandom = Random.Range(0f, 100f);
+                if (dropChanceRandom < dropChance)
+                {
+                    
+                    Instantiate(coin, transform.position, transform.rotation);
+                }
+            }
         }
         //else
         //{

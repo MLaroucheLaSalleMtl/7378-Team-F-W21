@@ -7,11 +7,18 @@ public class PlayerController : MonoBehaviour
     public GameObject bullets;
     public Transform shootingPoint;
     [SerializeField] private AudioSource audioShoot;
-    public bool Paused;
 
+    public bool autoFire = false;
+    public float mouseDown;
+    public float shootRate;
 
-
+    public static PlayerController instance;
     // Start is called before the first frame update
+
+    private void Awake()
+    {
+        instance = this;
+    }
     void Start()
     {
         
@@ -20,24 +27,28 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (Paused ==false)
-        {
-            Shooting();
-        }
-            
-       
-        //Shooting();
+        Shooting();      
     }
 
 
     void Shooting()
-    {
+    {     
         if (Input.GetMouseButtonDown(0))
         {
             Instantiate(bullets, shootingPoint.position, shootingPoint.rotation);
+            mouseDown = shootRate;
+            if (audioShoot) audioShoot.PlayOneShot(audioShoot.clip);
+        }
 
-           if (audioShoot) audioShoot.PlayOneShot(audioShoot.clip);
+        if (autoFire && Input.GetMouseButton(0))
+        {
+            mouseDown -= Time.deltaTime;
+            if (mouseDown <= 0)
+            {
+                Instantiate(bullets, shootingPoint.position, shootingPoint.rotation);
+                mouseDown = shootRate;
+                if (audioShoot) audioShoot.PlayOneShot(audioShoot.clip);
+            }        
         }
     }
 
@@ -45,7 +56,12 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.tag == "EnemyBullets")
         {
-            PlayerHealth.instance.HurtPlayer();
+            PlayerHealth.instance.HurtPlayer(10);
         }
+    }
+
+    public void AutoFireShooting()
+    {       
+        autoFire = true;
     }
 }

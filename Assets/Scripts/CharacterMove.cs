@@ -41,14 +41,12 @@ public class CharacterMove : MonoBehaviour
     }
 
     private void Movement()
-    {
-        
-        
+    {      
         Vector3 pos = new Vector3();
         pos.x = move.x * speedX;
         pos.y = move.y * speedY;
         rigid.velocity = Vector3.SmoothDamp(rigid.velocity, pos, ref zeroVelocity, smoothing);
-        
+        //rigid.AddForce(Vector3.SmoothDamp(rigid.velocity, pos, ref zeroVelocity, smoothing));    
     }
 
     // Update is called once per frame

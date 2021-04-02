@@ -30,9 +30,9 @@ public class PlayerHealth : MonoBehaviour
         
     }
 
-    public void HurtPlayer()
+    public void HurtPlayer(int dmg)
     {
-        curHealth-=10;
+        curHealth-=dmg;
         if (curHealth <= 0)
         {
             CharacterMove.instance.gameObject.SetActive(false);

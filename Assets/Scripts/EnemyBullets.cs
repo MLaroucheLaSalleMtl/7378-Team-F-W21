@@ -26,7 +26,7 @@ public class EnemyBullets : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            PlayerHealth.instance.HurtPlayer();
+            PlayerHealth.instance.HurtPlayer(10);
         }
         Destroy(gameObject);
     }

@@ -13,6 +13,7 @@ public class Dialog : MonoBehaviour
 
     void Start()
     {
+
         StartCoroutine(Type());
     }
 

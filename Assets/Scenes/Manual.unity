@@ -520,7 +520,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -550,7 +550,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 1
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -143.94368, y: -10.3083515, z: -139.66003, w: -14.64968}
+  m_margin: {x: -296.1879, y: -10.3083515, z: -297.70923, w: -14.64968}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -596,7 +596,7 @@ PrefabInstance:
       objectReference: {fileID: 754959981}
     - target: {fileID: 6423105781998602376, guid: 6772cb7d647eae24d938e5ac0bf6bde3, type: 3}
       propertyPath: typingspeed
-      value: 0.03
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 6423105781998602376, guid: 6772cb7d647eae24d938e5ac0bf6bde3, type: 3}
       propertyPath: continueButton
@@ -604,7 +604,7 @@ PrefabInstance:
       objectReference: {fileID: 1046396540}
     - target: {fileID: 6423105781998602376, guid: 6772cb7d647eae24d938e5ac0bf6bde3, type: 3}
       propertyPath: sentences.Array.size
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6423105781998602376, guid: 6772cb7d647eae24d938e5ac0bf6bde3, type: 3}
       propertyPath: sentences.Array.data[0]
@@ -632,15 +632,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6423105781998602376, guid: 6772cb7d647eae24d938e5ac0bf6bde3, type: 3}
       propertyPath: sentences.Array.data[6]
-      value: 'PRISONER:  Ready  to  kill  some  bitches  ? '
+      value: What  is  the Green  thing  ?
       objectReference: {fileID: 0}
     - target: {fileID: 6423105781998602376, guid: 6772cb7d647eae24d938e5ac0bf6bde3, type: 3}
       propertyPath: sentences.Array.data[7]
-      value: 'PRISONRE:  Let''s  go.'
+      value: That  is  auto  shooting  mode
       objectReference: {fileID: 0}
     - target: {fileID: 6423105781998602376, guid: 6772cb7d647eae24d938e5ac0bf6bde3, type: 3}
       propertyPath: sentences.Array.data[8]
-      value: PRISONER:Find me some weapons
+      value: 'PRISONER:  Ready  to  kill  some  bitches  ? '
+      objectReference: {fileID: 0}
+    - target: {fileID: 6423105781998602376, guid: 6772cb7d647eae24d938e5ac0bf6bde3, type: 3}
+      propertyPath: sentences.Array.data[9]
+      value: 'PRISONRE:  Let''s  go.'
       objectReference: {fileID: 0}
     - target: {fileID: 6423105781998602377, guid: 6772cb7d647eae24d938e5ac0bf6bde3, type: 3}
       propertyPath: m_RootOrder
@@ -719,7 +723,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1046396540}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -218.2}
   m_LocalScale: {x: 0.5669738, y: 0.5669738, z: 0.5669738}
   m_Children: []
   m_Father: {fileID: 725529740}
@@ -752,10 +756,10 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.09064613, g: 0.31207305, b: 0.9150943, a: 1}
+    m_HighlightedColor: {r: 0.19339621, g: 0.41233152, b: 1, a: 1}
     m_PressedColor: {r: 0.31764707, g: 0.31764707, b: 0.31764707, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.2
   m_SpriteState:
