@@ -5,10 +5,14 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public GameObject bullets;
+    public GameObject EnhanceBullets;
     public Transform shootingPoint;
     [SerializeField] private AudioSource audioShoot;
-
+    [SerializeField] private AudioSource audioShootWp2;
     public bool autoFire = false;
+    public bool WeaponEnhance = false;
+    public bool pause = false;
+
     public float mouseDown;
     public float shootRate;
 
@@ -19,10 +23,8 @@ public class PlayerController : MonoBehaviour
     {
         instance = this;
     }
-    void Start()
-    {
-        
-    }
+
+
 
     // Update is called once per frame
     void Update()
@@ -35,9 +37,27 @@ public class PlayerController : MonoBehaviour
     {     
         if (Input.GetMouseButtonDown(0))
         {
-            Instantiate(bullets, shootingPoint.position, shootingPoint.rotation);
-            mouseDown = shootRate;
-            if (audioShoot) audioShoot.PlayOneShot(audioShoot.clip);
+            if(pause != true)
+            {
+                if (WeaponEnhance == true)
+                {
+                    Instantiate(EnhanceBullets, shootingPoint.position, shootingPoint.rotation);
+                    Debug.Log("enhance");
+                    mouseDown = shootRate;
+                    if (audioShoot) audioShoot.PlayOneShot(audioShoot.clip);
+                    if (audioShootWp2) audioShootWp2.PlayOneShot(audioShootWp2.clip);
+                }
+                else
+                {
+                    Instantiate(bullets, shootingPoint.position, shootingPoint.rotation);
+                    mouseDown = shootRate;
+                    if (audioShoot) audioShoot.PlayOneShot(audioShoot.clip);
+                }
+            }
+           
+                
+
+           
         }
 
         if (autoFire && Input.GetMouseButton(0))
@@ -45,9 +65,21 @@ public class PlayerController : MonoBehaviour
             mouseDown -= Time.deltaTime;
             if (mouseDown <= 0)
             {
-                Instantiate(bullets, shootingPoint.position, shootingPoint.rotation);
-                mouseDown = shootRate;
-                if (audioShoot) audioShoot.PlayOneShot(audioShoot.clip);
+                if (WeaponEnhance == true)
+                {
+                    Instantiate(EnhanceBullets, shootingPoint.position, shootingPoint.rotation);
+                    Debug.Log("enhance");
+                    mouseDown = shootRate;
+                    if (audioShootWp2) audioShootWp2.PlayOneShot(audioShootWp2.clip);
+                }
+                else
+                {
+                    Instantiate(bullets, shootingPoint.position, shootingPoint.rotation);
+                    mouseDown = shootRate;
+                    if (audioShoot) audioShoot.PlayOneShot(audioShoot.clip);
+                }
+   
+                
             }        
         }
     }

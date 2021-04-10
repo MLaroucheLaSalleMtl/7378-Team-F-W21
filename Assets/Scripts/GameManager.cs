@@ -11,13 +11,19 @@ public class GameManager : MonoBehaviour
     public Text pointTxt;
     private int Point = 0;
     private const string preTextPoint = "Point: ";
-
+    [SerializeField] private GameObject AlertPanel;
+    [SerializeField] private GameObject CongratPanel;
+    //public bool enhance = false;
+    [SerializeField] public GameObject EnhanceWeapon;
+    [SerializeField] public GameObject OriginalWeapon;
+    
     // Start is called before the first frame update
     void Start()
     {
         UIController.instance.coinText.text = "Coins:"+ curCoins.ToString();
         pointTxt = GameObject.Find("Point").GetComponent<Text>();
         pointTxt.text = preTextPoint + Point.ToString("D2");
+        
     }
 
     void Awake()
@@ -38,10 +44,20 @@ public class GameManager : MonoBehaviour
 
     public void UseCoins(int coins)
     {
-        curCoins -= coins;
-        if (curCoins < 0)
+        
+        if (coins>curCoins)
         {
-            curCoins = 0;
+            AlertPanel.SetActive(true);
+            
+        }
+        else
+        {
+            curCoins -= coins;
+            OriginalWeapon.SetActive(false);
+            EnhanceWeapon.SetActive(true);
+            GameObject.Find("Character").GetComponent<PlayerController>().WeaponEnhance = true;
+            CongratPanel.SetActive(true);
+
         }
         UIController.instance.coinText.text = "Coins:" + curCoins.ToString();
 
@@ -56,5 +72,13 @@ public class GameManager : MonoBehaviour
     {
         Point += 5;
         pointTxt.text = preTextPoint + Point.ToString("D2");
+    }
+    public void CloseAlert()
+    {
+        AlertPanel.SetActive(false);
+    }
+    public void CloseGongrat()
+    {
+        CongratPanel.SetActive(false);
     }
 }

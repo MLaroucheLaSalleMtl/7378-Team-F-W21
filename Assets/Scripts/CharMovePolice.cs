@@ -29,6 +29,7 @@ public class CharMovePolice : MonoBehaviour
     public int dropChance;
     public static CharMovePolice instance;
     public GameObject coin;
+    private Rigidbody2D rigid;
     private void Awake()
     {
         instance = this;
@@ -38,6 +39,7 @@ public class CharMovePolice : MonoBehaviour
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         //txtPoint.text = preTextPoint + Point.ToString("D2");
+        rigid = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -45,10 +47,10 @@ public class CharMovePolice : MonoBehaviour
     {
         if (CharacterMove.instance.gameObject.activeInHierarchy) 
         { 
-        healthbar.SetHealth(Health);
+            healthbar.SetHealth(Health);
         if (Vector2.Distance(transform.position, target.position) < awayfrom)
         {
-            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+            rigid.transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);           
             anim.SetBool("enemyMove",true);
         }
         else
@@ -73,6 +75,11 @@ public class CharMovePolice : MonoBehaviour
         if(collision.tag=="PlayerBullets")
         {
             HurtEnemy();
+        }
+        
+        if(collision.tag == "PlayerBulletsEnhance")
+        {
+            HurtEnemyEnhance();
         }
         //if (Health <= 0)
         //{
@@ -110,7 +117,7 @@ public class CharMovePolice : MonoBehaviour
     public void HurtEnemy()
     {
         Health -= 10;
-        if (Health <= 0)
+        if (Health == 0)
         {
             //anim.SetBool("enemyDeath", true);
             //Point += 1;
@@ -134,5 +141,25 @@ public class CharMovePolice : MonoBehaviour
         //{
         //    anim.SetBool("enemyDeath", false);
         //}
+    }
+    public void HurtEnemyEnhance()
+    {
+        Health -= 20;
+        if (Health <= 0)
+        {
+            Destroy(gameObject);
+            Instantiate(blood, transform.position, transform.rotation);
+            GameManager.instance.AddPoint();
+
+            if (dropCoins)
+            {
+                float dropChanceRandom = Random.Range(0f, 100f);
+                if (dropChanceRandom < dropChance)
+                {
+
+                    Instantiate(coin, transform.position, transform.rotation);
+                }
+            }
+        }
     }
 }

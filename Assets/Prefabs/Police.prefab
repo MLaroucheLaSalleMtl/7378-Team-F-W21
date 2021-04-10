@@ -81,7 +81,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 3588377369913894249}
   m_HandleRect: {fileID: 0}
-  m_Direction: 0
+  m_Direction: 1
   m_MinValue: 0
   m_MaxValue: 100
   m_WholeNumbers: 0
@@ -191,6 +191,7 @@ GameObject:
   - component: {fileID: 3588377370716004892}
   - component: {fileID: 3588377370716004894}
   - component: {fileID: 3588377370716004881}
+  - component: {fileID: 8845285524145118247}
   m_Layer: 8
   m_Name: Police
   m_TagString: Enemy
@@ -209,9 +210,9 @@ Transform:
   m_LocalPosition: {x: 43.97, y: 0.11, z: -1798.005}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
-  - {fileID: 501542108780426943}
   - {fileID: 3588377371082293555}
   - {fileID: 6854102829168839075}
+  - {fileID: 501542108780426943}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -323,7 +324,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.2625}
@@ -355,6 +356,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.4375, y: 0.65625}
   m_EdgeRadius: 0
+--- !u!50 &8845285524145118247
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3588377370716004893}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &3588377371082293567
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,7 +409,7 @@ RectTransform:
   m_Children:
   - {fileID: 3588377369493793980}
   m_Father: {fileID: 3588377370716004883}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -483,7 +505,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3588377370716004883}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8764903779488425995
 GameObject:
@@ -514,7 +536,7 @@ Transform:
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3588377370716004883}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6993677193565013696
 SpriteRenderer:

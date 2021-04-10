@@ -70,6 +70,10 @@ public class BossShoot : MonoBehaviour
         {
             HurtEnemy();
         }
+        if (collision.tag == "PlayerBulletsEnhance")
+        {
+            HurtEnemyEnhance();
+        }
     }
 
     public void HurtEnemy()
@@ -81,6 +85,19 @@ public class BossShoot : MonoBehaviour
             Destroy(gameObject);
             Instantiate(blood, transform.position, transform.rotation);
             GameManager.instance.BossAddPoint();
+        }
+    }
+
+    public void HurtEnemyEnhance()
+    {
+        Health -= 20;
+        if (Health <= 0)
+        {
+            Destroy(gameObject);
+            Instantiate(blood, transform.position, transform.rotation);
+            GameManager.instance.AddPoint();
+
+            
         }
     }
 }

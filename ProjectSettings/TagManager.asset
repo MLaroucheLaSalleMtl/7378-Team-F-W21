@@ -10,6 +10,7 @@ TagManager:
   - Enemy_1
   - Key
   - Door
+  - PlayerBulletsEnhance
   layers:
   - Default
   - TransparentFX
@@ -24,8 +25,8 @@ TagManager:
   - PickUps
   - Minimap
   - CamAndMiniMap
-  - 
-  - 
+  - Boss
+  - BossBullets
   - 
   - 
   - 

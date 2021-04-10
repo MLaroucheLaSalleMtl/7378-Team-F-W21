@@ -23,7 +23,7 @@ public class Barrels : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag=="Player" || collision.tag=="PlayerBullets")
+        if( collision.tag=="PlayerBullets" || collision.tag == "PlayerBulletsEnhance")
         {
             Destroy(gameObject);
             //Instantiate(brokenBarrel, transform.position, transform.rotation);

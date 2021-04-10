@@ -13,9 +13,11 @@ public class endgame_dialog : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider Player)
+    //private void OnTriggerEnter(Collider collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (Player.gameObject.tag == "Player")
+        Debug.Log("touch");
+        if (collision.gameObject.tag == "Player")
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }

@@ -9,13 +9,14 @@ public class CharacterMove : MonoBehaviour
     private Vector2 move = new Vector2();
 
     [Range(1f, 8f)] [SerializeField] private float speedX = 4f;
-    [Range(1f, 8f)] [Tooltip("Should be 1.4f")] [SerializeField] private float speedY = 4f;
-    [Range(.1f, .3f)] [Tooltip("Increase slippery")] [SerializeField] private float smoothing = 0.1f;
+    [Range(1f, 8f)]  [SerializeField] private float speedY = 4f;
+    [Range(.1f, .3f)] [SerializeField] private float smoothing = 0.1f;
 
     private Rigidbody2D rigid;
     private Vector3 zeroVelocity = Vector3.zero;
 
     public Transform aiming;
+    public Transform aimingWp2;
 
     public Animator anim;
 
@@ -74,16 +75,19 @@ public class CharacterMove : MonoBehaviour
         {
             transform.localScale = new Vector3(-1f, 1f, 1f);
             aiming.localScale = new Vector3(-1f, -1f, 1f);
+            aimingWp2.localScale = new Vector3(-1f, -1f, 1f);
         }
         else
         {
             transform.localScale =  Vector3.one;
             aiming.localScale =  Vector3.one;
+            aimingWp2.localScale = Vector3.one;
         }
 
         Vector2 offset = new Vector2(mousePos.x - screenPoint.x,mousePos.y-screenPoint.y);
         float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
         aiming.rotation = Quaternion.Euler(0,0,angle);
+        aimingWp2.rotation = Quaternion.Euler(0, 0, angle);
     }
 
     void FixedUpdate()
