@@ -9,8 +9,8 @@ public class CharMovePolice : MonoBehaviour
     public float awayfrom;
     public Transform target;
 
-    [SerializeField] private int Health = 100;
-    public HealthBar healthbar;
+    [SerializeField] private int Health = 100;  //by chenrui
+    public HealthBar healthbar;    //by chenrui
     public Animator anim;
     //[SerializeField] private int Point = 0;
     //[SerializeField] private Text txtPoint;
@@ -47,8 +47,8 @@ public class CharMovePolice : MonoBehaviour
     {
         if (CharacterMove.instance.gameObject.activeInHierarchy) 
         { 
-            healthbar.SetHealth(Health);
-        if (Vector2.Distance(transform.position, target.position) < awayfrom)
+            healthbar.SetHealth(Health);      //by chenrui
+            if (Vector2.Distance(transform.position, target.position) < awayfrom)
         {
             rigid.transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);           
             anim.SetBool("enemyMove",true);
@@ -116,16 +116,16 @@ public class CharMovePolice : MonoBehaviour
     }
     public void HurtEnemy()
     {
-        Health -= 10;
-        if (Health == 0)
+        Health -= 10;    //by chenrui
+        if (Health == 0)    //by chenrui
         {
             //anim.SetBool("enemyDeath", true);
             //Point += 1;
             //txtPoint.text = preTextPoint + Point.ToString("D2");
             
-            Destroy(gameObject);
+            Destroy(gameObject);    //by chenrui
             Instantiate(blood, transform.position, transform.rotation);
-            GameManager.instance.AddPoint();
+            GameManager.instance.AddPoint();  //by chenrui
 
             if (dropCoins)
             {
@@ -142,16 +142,16 @@ public class CharMovePolice : MonoBehaviour
         //    anim.SetBool("enemyDeath", false);
         //}
     }
-    public void HurtEnemyEnhance()
+    public void HurtEnemyEnhance()    //by chenrui
     {
-        Health -= 20;
-        if (Health <= 0)
+        Health -= 20;    //by chenrui
+        if (Health <= 0)    //by chenrui
         {
-            Destroy(gameObject);
+            Destroy(gameObject);   //by chenrui
             Instantiate(blood, transform.position, transform.rotation);
-            GameManager.instance.AddPoint();
+            GameManager.instance.AddPoint();    //by chenrui
 
-            if (dropCoins)
+            if (dropCoins)   
             {
                 float dropChanceRandom = Random.Range(0f, 100f);
                 if (dropChanceRandom < dropChance)

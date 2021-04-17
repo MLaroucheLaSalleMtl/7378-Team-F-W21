@@ -2,8 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//all by chenrui
 public class BossShoot : MonoBehaviour
 {
+
+    
     public GameObject boss;
     private Transform target;
     public Transform bossTrans;

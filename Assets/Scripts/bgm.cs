@@ -4,11 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
 
+
+//all by chenrui
 [RequireComponent(typeof(Slider))]
 public class bgm : MonoBehaviour
 {
     
-   
+           
         [SerializeField] private AudioMixer audioM = null;
         [SerializeField] private string nameParam = null;
         private Slider slider;

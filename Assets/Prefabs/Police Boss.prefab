@@ -460,7 +460,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2145888181515274005}
   - component: {fileID: 6287490320611402776}
-  m_Layer: 13
+  m_Layer: 11
   m_Name: MinimapIcon_police
   m_TagString: Untagged
   m_Icon: {fileID: 0}

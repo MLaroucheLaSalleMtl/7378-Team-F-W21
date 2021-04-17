@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+//all by chenrui
 public class Shop : MonoBehaviour
 {
-    //public static Shop instance;
+   
 
 
     [SerializeField] public GameObject ShopPanel;
@@ -50,7 +52,7 @@ public class Shop : MonoBehaviour
     }
     public void Buy()
     {
-        GameManager.instance.UseCoins(25);
+        GameManager.instance.UseCoins(10);
         
     }
 

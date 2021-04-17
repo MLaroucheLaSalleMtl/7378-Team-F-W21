@@ -69,7 +69,8 @@ public class CharacterMove : MonoBehaviour
     void rotateAiming()
     {
         Vector3 mousePos = Input.mousePosition;
-        Vector3 screenPoint = Camera.main.WorldToScreenPoint(transform.localPosition);
+        //Vector3 screenPoint = Camera.main.WorldToScreenPoint(transform.localPosition);
+        Vector2 screenPoint = CameraController.instance.cam.WorldToScreenPoint(transform.localPosition);
 
         if (mousePos.x < screenPoint.x)
         {

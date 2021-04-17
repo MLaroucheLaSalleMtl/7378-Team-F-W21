@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//all  by chenrui
 public class PauseMenu : MonoBehaviour
 {
     public bool Paused = false;

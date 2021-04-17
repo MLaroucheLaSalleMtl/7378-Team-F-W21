@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
+
+//all by chenrui
 public class but : MonoBehaviour, IPointerEnterHandler, IDeselectHandler, IPointerDownHandler
 {
     public void OnDeselect(BaseEventData eventData)

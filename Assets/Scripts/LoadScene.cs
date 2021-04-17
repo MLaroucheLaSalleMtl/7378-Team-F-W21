@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
+//all by chenrui
 public class LoadScene : MonoBehaviour
 {
 

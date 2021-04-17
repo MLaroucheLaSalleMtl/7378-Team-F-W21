@@ -608,7 +608,7 @@ RectTransform:
   m_GameObject: {fileID: 374057603}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.1095, y: 2.1095, z: 2.1095}
   m_Children:
   - {fileID: 588987839}
   m_Father: {fileID: 760649095}
@@ -1173,7 +1173,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -1653,7 +1653,7 @@ RectTransform:
   m_GameObject: {fileID: 917460604}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.1145, y: 2.1145, z: 2.1145}
   m_Children:
   - {fileID: 1325794692}
   m_Father: {fileID: 760649095}
@@ -1886,7 +1886,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 6164975876524354845, guid: babdc567b88b1ab4ea9383743b9dd61b, type: 2}
   m_audioClip: {fileID: 8300000, guid: 9958e8e015a57084fbbe97cbb1714ab6, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.513
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2107,7 +2107,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9394fbcb43cc86e41b9981bfa2b13854, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 34e176e050a222c448ec1ac5540934d9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2258,7 +2258,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -2427,7 +2427,7 @@ RectTransform:
   m_GameObject: {fileID: 1674505471}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.1075, y: 2.1075, z: 2.1075}
   m_Children:
   - {fileID: 2098074917}
   m_Father: {fileID: 760649095}
@@ -3120,7 +3120,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
